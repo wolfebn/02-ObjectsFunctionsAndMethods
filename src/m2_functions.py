@@ -3,12 +3,12 @@ Practice DEFINING and CALLING
      FUNCTIONS
 
 Authors: David Mutchler, Dave Fisher, Vibha Alangar, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Bryan Wolfe.
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ###############################################################################
 #
-# TODO: 2.
+# Done: 2.
 #   Allow this module to use the  rosegraphics.py  module by marking the
 #     src
 #   folder in this project as a "Sources Root", as follows:
@@ -30,15 +30,21 @@ def main():
 
 ###############################################################################
 #
-# TODO: 3a.  Define a function immediately blow this _TODO_.
+# Done: 3a.  Define a function immediately blow this _TODO_.
 #   It takes two arguments that denote, for a right triangle,
 #   the lengths of the two sides adjacent to its right angle,
 #   and it returns the length of the hypotenuse of that triangle.
 #     HINT: Apply the Pythagorean theorem.
 #
+def hypotenuse_finder(a,b):
+    h_squared = a**2+b**2
+    h = h_squared**0.5
+    return h
 #   You may name the function and its parameters whatever you wish.
 #
-# TODO: 3b.  In main, CALL your function and print the returned value,
+print(hypotenuse_finder(3,4))
+
+# Done: 3b.  In main, CALL your function and print the returned value,
 #   to test whether you defined the function correctly.
 #
 ###############################################################################
@@ -46,11 +52,24 @@ def main():
 
 ###############################################################################
 #
-# TODO: 4a.  Define a function immediately below this _TODO_.
+# Done: 4a.  Define a function immediately below this _TODO_.
 #   It takes two arguments:
 #     -- a string that represents a color (e.g. 'red')
 #     -- a positive integer that represents the thickness of a Pen.
 #
+def separating_turtles(color, thickness):
+    import rosegraphics as rg
+    window = rg.TurtleWindow()
+    turtle1 = rg.SimpleTurtle('turtle')
+    turtle2 = rg.SimpleTurtle('turtle')
+    turtle1.pen = rg.Pen('green', thickness)
+    turtle2.pen = rg.Pen(color,5)
+    turtle1.forward(100)
+    turtle2.backward(100)
+    window.close_on_mouse_click()
+
+separating_turtles('red',10)
+
 #   The function:
 #     -- Constructs a TurtleWindow.
 #     -- Constructs two SimpleTurtles, where:
@@ -62,7 +81,7 @@ def main():
 #
 #   You may name the function and its parameters whatever you wish.
 #
-# TODO: 4b.  In main, CALL your function and print the returned value,
+# Done: 4b.  In main, CALL your function and print the returned value,
 #   to test whether you defined the function correctly.
 #
 ###############################################################################
@@ -70,7 +89,7 @@ def main():
 
 ###############################################################################
 #
-# TODO: 5.
+# Done: 5.
 #   COMMIT-and-PUSH your work (after changing this TO-DO to DONE).
 #
 #   As a reminder, here is how you should do so:
